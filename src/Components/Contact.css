@@ -1,0 +1,155 @@
+.contact {
+  padding: 5rem 2rem;
+  background: white;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 3rem;
+  align-items: start;
+}
+
+.contact-info {
+  display: grid;
+  gap: 2rem;
+}
+
+.info-item {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid #1a1a2e;
+  transition: all 0.3s ease;
+}
+
+.info-item:hover {
+  transform: translateX(5px);
+  background: #f0f0f0;
+}
+
+.info-item h3 {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.info-item p {
+  color: #666;
+  margin: 0;
+}
+
+.info-item a {
+  color: #1a1a2e;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.info-item a:hover {
+  color: #16213e;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.social-links a {
+  display: inline-block;
+  background: #1a1a2e;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background: #16213e;
+  transform: translateY(-2px);
+}
+
+.contact-form {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 12px;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  color: #333;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.8rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #1a1a2e;
+  box-shadow: 0 0 0 3px rgba(26, 26, 46, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form .btn {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.success-message {
+  background: #d4edda;
+  color: #155724;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #28a745;
+  text-align: center;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 3rem 1rem;
+  }
+
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contact-form {
+    padding: 1.5rem;
+  }
+}
