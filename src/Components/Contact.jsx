@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import './Contact.css';
 
+const GITHUB_URL = import.meta.env.VITE_GITHUB_URL || '#';
+const LINKEDIN_URL = import.meta.env.VITE_LINKEDIN_URL || '#';
+const TWITTER_URL = import.meta.env.VITE_TWITTER_URL || '#';
+
 function Contact() {
   const [formData, setFormData] = useState({
     name: '',
@@ -50,9 +54,9 @@ function Contact() {
             <div className="info-item">
               <h3>Social</h3>
               <div className="social-links">
-                <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                <a href="#" target="_blank" rel="noopener noreferrer">Twitter</a>
+                <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href={TWITTER_URL} target="_blank" rel="noopener noreferrer">Twitter</a>
               </div>
             </div>
           </div>

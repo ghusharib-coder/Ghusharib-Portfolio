@@ -15,7 +15,7 @@ function Projects() {
         "API Integration",
         "REST APIs",
       ],
-      link: "https://fresco-frontend-blue.vercel.app",
+      link: import.meta.env.VITE_FRESCO_PROJECT_URL || "#",
     },
     {
       id: 2,
@@ -31,7 +31,7 @@ function Projects() {
         " Socket.io",
         "REST APIs",
       ],
-      link: "https://skill-sellers-frontend-b9va.vercel.app",
+      link: import.meta.env.VITE_SKILLSELLERS_PROJECT_URL || "#",
     },
     {
       id: 3,
@@ -39,7 +39,7 @@ function Projects() {
       description:
         "Rentify is a modern car rental platform that allows users to browse, book, and manage rental vehicles easily through a seamless online experience.",
       tags: ["React", "MongoDB", "Node.js", "Tailwind CSS", "REST APIs"],
-      link: "https://gmz-motors-frontend.vercel.app",
+      link: import.meta.env.VITE_GMZ_MOTORS_PROJECT_URL || "#",
     },
     {
       id: 4,
@@ -54,7 +54,7 @@ function Projects() {
         "Tailwind CSS",
         "Email Js",
       ],
-      link: "#",
+      link: import.meta.env.VITE_MM_ADVOCATES_PROJECT_URL || "#",
     },
     {
       id: 5,
@@ -62,7 +62,7 @@ function Projects() {
       description:
         "My portfolio website showcases my skills, experience, and projects in a user-friendly and visually appealing way. It is built using React, Next.js, Tailwind CSS, and Framer Motion. It also includes a contact form powered by Email Js.",
       tags: ["React", "Next.js", "Tailwind CSS", "Framer Motion", "Email Js"],
-      link: "#",
+      link: import.meta.env.VITE_PORTFOLIO_PROJECT_URL || "#",
     },
     {
       id: 6,
@@ -70,7 +70,7 @@ function Projects() {
       description:
         "AI-powered tool that generates professional portfolio websites from minimal user input using templates and customization.",
       tags: ["React", "AI/ML", "Next.js", "Tailwind"],
-      link: "#",
+      link: import.meta.env.VITE_PORTFOLIO_GENERATOR_URL || "#",
     },
   ];
 

@@ -1,5 +1,9 @@
 import './Footer.css';
 
+const GITHUB_URL = import.meta.env.VITE_GITHUB_URL || '#';
+const LINKEDIN_URL = import.meta.env.VITE_LINKEDIN_URL || '#';
+const TWITTER_URL = import.meta.env.VITE_TWITTER_URL || '#';
+
 function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -25,9 +29,9 @@ function Footer() {
           <div className="footer-section">
             <h3>Social</h3>
             <ul>
-              <li><a href="#" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-              <li><a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-              <li><a href="#" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+              <li><a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">GitHub</a></li>
+              <li><a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+              <li><a href={TWITTER_URL} target="_blank" rel="noopener noreferrer">Twitter</a></li>
             </ul>
           </div>
         </div>
