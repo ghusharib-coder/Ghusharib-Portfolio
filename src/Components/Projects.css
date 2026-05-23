@@ -1,6 +1,9 @@
 .projects {
-  padding: 5rem 2rem;
+  padding: 3rem 2rem;
   background: white;
+  position: relative;
+  z-index: 4;
+  overflow: visible;
 }
 
 .projects-grid {
@@ -77,6 +80,40 @@
   font-weight: 600;
   transition: all 0.3s ease;
   display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .projects {
+    padding: 2rem 1rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    padding: 1.5rem;
+  }
+
+  .project-header h3 {
+    font-size: 1.2rem;
+  }
+
+  .project-description {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-tags {
+    gap: 0.3rem;
+  }
+
+  .tag {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
 }
 
 .project-link:hover {

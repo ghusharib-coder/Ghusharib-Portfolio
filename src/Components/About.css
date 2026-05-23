@@ -1,11 +1,18 @@
 .about {
-  padding: 5rem 2rem;
+  padding: 3rem 2rem;
   background: #f8f9fa;
+  width: 100%;
+  max-width: 100%;
+  overflow: visible;
+  position: relative;
+  z-index: 5;
 }
 
 .container {
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .section-title {
@@ -111,17 +118,30 @@
 }
 
 @media (max-width: 768px) {
+  .about {
+    padding: 2rem 1rem;
+  }
+
   .about-content {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
 
   .section-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .about-text p {
+    font-size: 1rem;
   }
 
   .about-stats {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
 
   .image-placeholder {
@@ -129,7 +149,34 @@
     height: 200px;
   }
 
+  .profile-photo {
+    width: 200px;
+    height: 200px;
+  }
+
   .stat h3 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+
+  .stat {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 2rem 1rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .about-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .about-text p {
+    font-size: 0.95rem;
   }
 }
