@@ -1,6 +1,13 @@
 import "./Projects.css";
 
 function Projects() {
+  const normalizeUrl = (url) => {
+    if (!url || !url.trim()) return "#";
+    const value = url.trim();
+    if (/^https?:\/\//i.test(value)) return value;
+    return `https://${value}`;
+  };
+
   const projectsData = [
     {
       id: 1,
@@ -15,7 +22,7 @@ function Projects() {
         "API Integration",
         "REST APIs",
       ],
-      link: import.meta.env.VITE_FRESCO_PROJECT_URL || "#",
+      link: normalizeUrl(import.meta.env.VITE_FRESCO_PROJECT_URL),
     },
     {
       id: 2,
@@ -31,7 +38,7 @@ function Projects() {
         " Socket.io",
         "REST APIs",
       ],
-      link: import.meta.env.VITE_SKILLSELLERS_PROJECT_URL || "#",
+      link: normalizeUrl(import.meta.env.VITE_SKILLSELLERS_PROJECT_URL),
     },
     {
       id: 3,
@@ -39,7 +46,7 @@ function Projects() {
       description:
         "Rentify is a modern car rental platform that allows users to browse, book, and manage rental vehicles easily through a seamless online experience.",
       tags: ["React", "MongoDB", "Node.js", "Tailwind CSS", "REST APIs"],
-      link: import.meta.env.VITE_GMZ_MOTORS_PROJECT_URL || "#",
+      link: normalizeUrl(import.meta.env.VITE_GMZ_MOTORS_PROJECT_URL),
     },
     {
       id: 4,
@@ -54,7 +61,7 @@ function Projects() {
         "Tailwind CSS",
         "Email Js",
       ],
-      link: import.meta.env.VITE_MM_ADVOCATES_PROJECT_URL || "#",
+      link: normalizeUrl(import.meta.env.VITE_MM_ADVOCATES_PROJECT_URL),
     },
     {
       id: 5,
@@ -62,7 +69,7 @@ function Projects() {
       description:
         "My portfolio website showcases my skills, experience, and projects in a user-friendly and visually appealing way. It is built using React, Next.js, Tailwind CSS, and Framer Motion. It also includes a contact form powered by Email Js.",
       tags: ["React", "Next.js", "Tailwind CSS", "Framer Motion", "Email Js"],
-      link: import.meta.env.VITE_PORTFOLIO_PROJECT_URL || "#",
+      link: normalizeUrl(import.meta.env.VITE_PORTFOLIO_PROJECT_URL),
     },
     {
       id: 6,
@@ -70,7 +77,7 @@ function Projects() {
       description:
         "AI-powered tool that generates professional portfolio websites from minimal user input using templates and customization.",
       tags: ["React", "AI/ML", "Next.js", "Tailwind"],
-      link: import.meta.env.VITE_PORTFOLIO_GENERATOR_URL || "#",
+      link: normalizeUrl(import.meta.env.VITE_PORTFOLIO_GENERATOR_URL),
     },
   ];
 
@@ -94,7 +101,12 @@ function Projects() {
                   </span>
                 ))}
               </div>
-              <a href={project.link} className="project-link">
+              <a
+                href={project.link}
+                className="project-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 View Project →
               </a>
             </div>
