@@ -61,7 +61,7 @@ function Projects() {
         "Tailwind CSS",
         "Email Js",
       ],
-      link: normalizeUrl(import.meta.env.VITE_MM_ADVOCATES_PROJECT_URL),
+      link: "https://m-m-advocates.vercel.app",
     },
     {
       id: 5,
