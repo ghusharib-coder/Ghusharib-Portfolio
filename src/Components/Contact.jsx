@@ -1,26 +1,39 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import './Contact.css';
 import emailjs from '@emailjs/browser';
 const GITHUB_URL = import.meta.env.VITE_GITHUB_URL || '#';
 const LINKEDIN_URL = import.meta.env.VITE_LINKEDIN_URL || '#';
 const TWITTER_URL = import.meta.env.VITE_TWITTER_URL || '#';
 
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_t6btywb';
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_qh84qyr';
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || '_FOizkETAEXmrTdlB';
+
 export const ContactUs = () => {
   const form = useRef();
+
+  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
-      .sendForm(service_t6btywb, template_qh84qyr, form.current, {
-        publicKey: _FOizkETAEXmrTdlB,
-      })
+      .sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
       .then(
         () => {
+          setSubmitted(true);
+          setFormData({ name: '', email: '', subject: '', message: '' });
+          if (form.current) form.current.reset();
           console.log('SUCCESS!');
         },
         (error) => {
-          console.log('FAILED...', error.text);
+          console.log('FAILED...', error?.text || error);
         },
       );
   };
