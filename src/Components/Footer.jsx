@@ -14,6 +14,9 @@ function Footer() {
           <div className="footer-section">
             <h3>Portfolio</h3>
             <p>Creating beautiful web experiences</p>
+            <p>I'm a passionate developer with a love for creating elegant solutions to complex problems. 
+              With expertise in modern web technologies, I help businesses bring their ideas to life through 
+              clean, scalable code.</p>
           </div>
           
           <div className="footer-section">
