@@ -14,6 +14,7 @@ export const ContactUs = () => {
 
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,20 +23,22 @@ export const ContactUs = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setLoading(true);
 
     emailjs
       .sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
-      .then(
-        () => {
-          setSubmitted(true);
-          setFormData({ name: '', email: '', subject: '', message: '' });
-          if (form.current) form.current.reset();
-          console.log('SUCCESS!');
-        },
-        (error) => {
-          console.log('FAILED...', error?.text || error);
-        },
-      );
+      .then(() => {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        if (form.current) form.current.reset();
+        console.log('SUCCESS!');
+      })
+      .catch((error) => {
+        console.log('FAILED...', error?.text || error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   return (
@@ -77,6 +80,7 @@ export const ContactUs = () => {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
+                disabled={loading}
                 required
               />
             </div>
@@ -89,6 +93,7 @@ export const ContactUs = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
+                disabled={loading}
                 required
               />
             </div>
@@ -101,6 +106,7 @@ export const ContactUs = () => {
                 name="subject"
                 value={formData.subject}
                 onChange={handleChange}
+                disabled={loading}
                 required
               />
             </div>
@@ -112,13 +118,20 @@ export const ContactUs = () => {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
+                disabled={loading}
                 rows="5"
                 required
               ></textarea>
             </div>
             
-            <button type="submit" className="btn btn-primary">
-              Send Message
+            <button type="submit" className="btn btn-primary" disabled={loading}>
+              {loading ? (
+                <>
+                  <span className="spinner" /> Sending...
+                </>
+              ) : (
+                'Send Message'
+              )}
             </button>
 
             {submitted && (
