@@ -1,34 +1,28 @@
 import { useState } from 'react';
 import './Contact.css';
-
+import emailjs from '@emailjs/browser';
 const GITHUB_URL = import.meta.env.VITE_GITHUB_URL || '#';
 const LINKEDIN_URL = import.meta.env.VITE_LINKEDIN_URL || '#';
 const TWITTER_URL = import.meta.env.VITE_TWITTER_URL || '#';
 
-function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
+export const ContactUs = () => {
+  const form = useRef();
 
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    setTimeout(() => setSubmitted(false), 3000);
+
+    emailjs
+      .sendForm(service_t6btywb, template_qh84qyr, form.current, {
+        publicKey: _FOizkETAEXmrTdlB,
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
   };
 
   return (
@@ -61,7 +55,7 @@ function Contact() {
             </div>
           </div>
 
-          <form className="contact-form" onSubmit={handleSubmit}>
+          <form className="contact-form" ref={form} onSubmit={sendEmail}>
             <div className="form-group">
               <label htmlFor="name">Name</label>
               <input
