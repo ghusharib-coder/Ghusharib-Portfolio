@@ -103,13 +103,13 @@ function Hero() {
 
         {/* Social links */}
         <div className="hero-socials">
-          <a href={GITHUB_URL} aria-label="GitHub" className="social-link">
+          <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="social-link">
             <span className="social-dot gh" /> GitHub
           </a>
-          <a href={LINKEDIN_URL} aria-label="LinkedIn" className="social-link">
+          <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="social-link">
             <span className="social-dot li" /> LinkedIn
           </a>
-          <a href={TWITTER_URL} aria-label="Twitter" className="social-link">
+          <a href={TWITTER_URL} target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="social-link">
             <span className="social-dot tw" /> Twitter
           </a>
         </div>
