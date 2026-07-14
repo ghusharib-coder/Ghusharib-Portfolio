@@ -148,6 +148,13 @@
   overflow: hidden;
 }
 
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #1a1a2e, #667eea);
+  border-radius: inherit;
+  transition: width 0.8s ease;
+}
+
 @media (max-width: 768px) {
   .skills {
     padding: 2rem 1rem;

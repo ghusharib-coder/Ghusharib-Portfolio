@@ -7,7 +7,9 @@ function Hero() {
   const [displayText, setDisplayText] = useState('');
   const [roleIndex, setRoleIndex] = useState(0);
   const [deleting, setDeleting] = useState(false);
-
+  const GITHUB_URL = import.meta.env.VITE_GITHUB_URL || '#';
+  const LINKEDIN_URL = import.meta.env.VITE_LINKEDIN_URL || '#';
+  const TWITTER_URL = import.meta.env.VITE_TWITTER_URL || '#';
   // Multi-role typewriter
   useEffect(() => {
     const current = ROLES[roleIndex];
@@ -101,13 +103,13 @@ function Hero() {
 
         {/* Social links */}
         <div className="hero-socials">
-          <a href="#" aria-label="GitHub" className="social-link">
+          <a href={GITHUB_URL} aria-label="GitHub" className="social-link">
             <span className="social-dot gh" /> GitHub
           </a>
-          <a href="#" aria-label="LinkedIn" className="social-link">
+          <a href={LINKEDIN_URL} aria-label="LinkedIn" className="social-link">
             <span className="social-dot li" /> LinkedIn
           </a>
-          <a href="#" aria-label="Twitter" className="social-link">
+          <a href={TWITTER_URL} aria-label="Twitter" className="social-link">
             <span className="social-dot tw" /> Twitter
           </a>
         </div>
