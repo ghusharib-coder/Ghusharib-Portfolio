@@ -73,11 +73,11 @@ function Projects() {
     },
     {
       id: 6,
-      title: "Portfolio Generator",
+      title: "CrpytoEX_Crypto Trading Signals Platform",
       description:
-        "AI-powered tool that generates professional portfolio websites from minimal user input using templates and customization.",
-      tags: ["React", "AI/ML", "Next.js", "Tailwind"],
-      link: normalizeUrl(import.meta.env.VITE_PORTFOLIO_GENERATOR_URL),
+        "From signal creation to automated execution tracking and performance analytics — everything is integrated into one production-ready platform. 💻📈",
+      tags: ["React", "Bootstrap", "Node.js", "MongoDB", "REST APIs","Binance API","JWT","CRONS JOBS"],
+      link: normalizeUrl(import.meta.env.VITE_CRYPTOEX_PROJECT_URL),
     },
   ];
 
