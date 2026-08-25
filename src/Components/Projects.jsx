@@ -77,7 +77,7 @@ function Projects() {
       description:
         "From signal creation to automated execution tracking and performance analytics — everything is integrated into one production-ready platform. 💻📈",
       tags: ["React", "Bootstrap", "Node.js", "MongoDB", "REST APIs","Binance API","JWT","CRONS JOBS"],
-      link: normalizeUrl(import.meta.env.example.VITE_CRYPTOEX_PROJECT_URL),
+      link: normalizeUrl(import.meta.env.VITE_CRYPTOEX_PROJECT_URL),
     },
   ];
 
